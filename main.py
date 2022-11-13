@@ -45,7 +45,8 @@ if not video.isOpened():
     raise IOError("Cannot open webcam")
 
 while video.isOpened():  # checking if are getting video feed and using it
-    ret, frame = video.read()  # ret is a Boolean value returned by the read function, and it indicates whether or not the frame was captured                                successfully. If the frame is captured correctly, it's stored in the variable frame.
+    ret, frame = video.read()  # ret is a Boolean value returned by the read function, and it indicates whether or not the frame was captured
+    # successfully. If the frame is captured correctly, it's stored in the variable frame.
 
     if not ret:
         print("Can't receive frame (stream end?). Exiting ...")
@@ -72,7 +73,7 @@ while video.isOpened():  # checking if are getting video feed and using it
             for x, y, w, h in faces:
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 1)  # vierkant rond gezicht zetten + kleur
 
-                # emotie op webcam beeld afdrukken
+                # identiteit op webcam beeld afdrukken
                 cv2.putText(frame,
                             name,
                             (x, y),
@@ -88,8 +89,3 @@ while video.isOpened():  # checking if are getting video feed and using it
 
 video.release()
 cv2.destroyAllWindows()
-
-# imgElon = face_recognition.load_image_file('Images/Elon Musk.jpg')
-# imgElon = cv2.cvtColor(imgElon, cv2.COLOR_BGR2RGB)
-# imgTest = face_recognition.load_image_file('Images/Bill Gates.jpg')
-# imgTest = cv2.cvtColor(imgTest, cv2.COLOR_BGR2RGB)
