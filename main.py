@@ -81,7 +81,7 @@ while video.isOpened():  # checking if are getting video feed and using it
                             2,
                             cv2.LINE_4)
 
-        cv2.imshow('Webcam', frame)
+    cv2.imshow('Webcam', frame)
 
     if cv2.waitKey(1) == ord('q'):  # klik op 'q' toets op af te sluiten
         break
